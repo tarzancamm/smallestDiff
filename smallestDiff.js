@@ -15,15 +15,17 @@ let n = arrTwo.length
 // Write a function that determines the smallest difference.
 
 const smallestNum = (arr, arrTwo, m, n) => {
-    // find smallest difference bewteen arr and arrTwo
+    // Sort in ascending order
     arr.sort((a, b) => a - b)
     arrTwo.sort((a, b) => a - b)
 
     let a = 0
     let b = 0
 
+    // result set to highest safe integer
     let result = Number.MAX_SAFE_INTEGER
 
+    // find absolute diff and let result equal difference IF smaller than current diff
     while (a < m && b < n) {
         if (Math.abs(arr[a] - arrTwo[b]) < result)
             result = Math.abs(arr[a] - arrTwo[b]);
